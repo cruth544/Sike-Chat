@@ -27,7 +27,7 @@ usersController.get('/new', function ( req, res ) {
 });
 
 usersController.post('/create', function ( req, res) {
-    var user = new User({ email: req.body.email, password: req.body.password });
+    var user = new User({ email: req.body.email, firstName: req.body.firstName, lastName: req.body.lastName, imageUrl: req.body.imageUrl, password: req.body.password });
     user.saveAsync()
         .then(function() {
             req.session.email = user.email;
