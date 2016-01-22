@@ -1,1 +1,18 @@
-hi
+<!-- if you're logged in (redirects here after you register) -->
+<% if( curr_user  ){ %>
+<h1>logged in user:  <%= curr_user %> </h1>
+<a href="/logout">Log out</a>
+
+<!-- if you're logged out -->
+<% } else{ %>
+<a href="/new">Register</a> <a href="/login">Login</a>
+<% if( users && users.length > 0  ){ %>
+<table>
+    <tbody>
+    <% for(var i=0; i < users.length; i++) { %>
+    <tr> <td>User<%= i+1 %>&nbsp;</td>
+        <td><%= users[i].email %></td>
+    <% } %>
+    </tbody> </table>
+  <% } %>
+<% } %>

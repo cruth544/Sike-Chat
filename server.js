@@ -33,7 +33,7 @@ switch(app.get('env')){
         break;
     default:
         throw new Error('Unknown execution environment: ' + app.get('env'));
-}
+};
 
 // uncomment after placing your favicon in /public
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
